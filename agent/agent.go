@@ -11,6 +11,8 @@ import (
 	"io"
 	"io/ioutil"
 	"net"
+	"net/http"
+	hpprof "net/http/pprof"
 	"os"
 	gosignal "os/signal"
 	"runtime"
@@ -47,6 +49,14 @@ type Options struct {
 	// resources if the running process receives an interrupt.
 	// Optional.
 	NoShutdownCleanup bool
+
+	// EnableProfiling tells the agent enable profiling.
+	// Optional.
+	EnableProfiling bool
+
+	// EnableProfiling tells the agent enable profiling.
+	// Optional.
+	ProfilingMux *http.ServeMux
 }
 
 // Listen starts the gops agent on a host process. Once agent started, users
@@ -79,6 +89,10 @@ func Listen(opts *Options) error {
 	}
 	if !opts.NoShutdownCleanup {
 		gracefulShutdown()
+	}
+
+	if opts.EnableProfiling && opts.ProfilingMux != nil {
+		startHTTProfiling(opts.ProfilingMux)
 	}
 
 	addr := opts.Addr
@@ -234,4 +248,14 @@ func handle(conn io.Writer, msg []byte) error {
 		trace.Stop()
 	}
 	return nil
+}
+
+func startHTTProfiling(mux *http.ServeMux) {
+	mux.HandleFunc("/debug/pprof/", hpprof.Index)
+	mux.HandleFunc("/debug/pprof/profile", hpprof.Profile)
+	mux.HandleFunc("/debug/pprof/symbol", hpprof.Symbol)
+	mux.HandleFunc("/debug/pprof/trace", hpprof.Trace)
+	mux.HandleFunc("/debug/pprof/cmdline", hpprof.Cmdline)
+
+	// mux.Handle("/metrics", prometheus.Handler())
 }
