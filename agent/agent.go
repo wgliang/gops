@@ -19,6 +19,7 @@ import (
 	"runtime/pprof"
 	"runtime/trace"
 	"strconv"
+	"strings"
 	"sync"
 	"time"
 
@@ -101,7 +102,10 @@ func Listen(opts *Options) error {
 	}
 	ln, err := net.Listen("tcp", addr)
 	if err != nil {
-		return err
+		ln, err = net.Listen("tcp", conversAddrFormat(addr))
+		if err != nil {
+			return err
+		}
 	}
 	listener = ln
 	port := listener.Addr().(*net.TCPAddr).Port
@@ -248,6 +252,19 @@ func handle(conn io.Writer, msg []byte) error {
 		trace.Stop()
 	}
 	return nil
+}
+
+func conversAddrFormat(addr string) string {
+	if strings.Contains(addr, ".") {
+		index := strings.Index(addr, ":")
+		if len(addr) > index {
+			return addr[index:]
+		} else {
+			return ":0"
+		}
+	} else {
+		return "127.0.0.1" + addr
+	}
 }
 
 func startHTTProfiling(mux *http.ServeMux) {
