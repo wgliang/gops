@@ -12,9 +12,9 @@ import (
 	"os"
 	"sync"
 
-	"github.com/google/gops/internal"
-	"github.com/google/gops/internal/objfile"
 	ps "github.com/keybase/go-ps"
+	"github.com/wgliang/gops/internal"
+	"github.com/wgliang/gops/internal/objfile"
 )
 
 const helpText = `Usage: gops is a tool to list and diagnose Go processes.

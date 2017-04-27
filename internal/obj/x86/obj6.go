@@ -36,8 +36,8 @@ import (
 	"math"
 	"strings"
 
-	"github.com/google/gops/internal/obj"
-	"github.com/google/gops/internal/sys"
+	"github.com/wgliang/gops/internal/obj"
+	"github.com/wgliang/gops/internal/sys"
 )
 
 func CanUse1InsnTLS(ctxt *obj.Link) bool {

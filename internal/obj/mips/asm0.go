@@ -34,7 +34,7 @@ import (
 	"log"
 	"sort"
 
-	"github.com/google/gops/internal/obj"
+	"github.com/wgliang/gops/internal/obj"
 )
 
 // Instruction layout.

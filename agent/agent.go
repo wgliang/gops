@@ -22,9 +22,9 @@ import (
 
 	"bufio"
 
-	"github.com/google/gops/internal"
-	"github.com/google/gops/signal"
 	"github.com/kardianos/osext"
+	"github.com/wgliang/gops/internal"
+	"github.com/wgliang/gops/signal"
 )
 
 const defaultAddr = "127.0.0.1:0"

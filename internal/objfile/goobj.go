@@ -16,9 +16,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/google/gops/internal/sys"
+	"github.com/wgliang/gops/internal/sys"
 
-	"github.com/google/gops/internal/goobj"
+	"github.com/wgliang/gops/internal/goobj"
 )
 
 type goobjFile struct {

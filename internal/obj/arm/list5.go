@@ -33,7 +33,7 @@ package arm
 import (
 	"fmt"
 
-	"github.com/google/gops/internal/obj"
+	"github.com/wgliang/gops/internal/obj"
 )
 
 func init() {

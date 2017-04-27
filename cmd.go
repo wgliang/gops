@@ -11,8 +11,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/google/gops/internal"
-	"github.com/google/gops/signal"
+	"github.com/wgliang/gops/internal"
+	"github.com/wgliang/gops/signal"
 )
 
 var cmds = map[string](func(addr net.TCPAddr) error){

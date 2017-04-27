@@ -1,4 +1,4 @@
-# gops [![Build Status](https://travis-ci.org/google/gops.svg?branch=master)](https://travis-ci.org/google/gops) [![GoDoc](https://godoc.org/github.com/google/gops/agent?status.svg)](https://godoc.org/github.com/google/gops/agent)
+# gops [![Build Status](https://travis-ci.org/google/gops.svg?branch=master)](https://travis-ci.org/google/gops) [![GoDoc](https://godoc.org/github.com/wgliang/gops/agent?status.svg)](https://godoc.org/github.com/wgliang/gops/agent)
 
 gops is a command to list and diagnose Go processes currently running on your system.
 
@@ -13,7 +13,7 @@ $ gops
 ## Installation
 
 ```
-$ go get -u github.com/google/gops
+$ go get -u github.com/wgliang/gops
 ```
 
 ## Diagnostics
@@ -22,7 +22,7 @@ For processes that starts the diagnostics agent, gops can report
 additional information such as the current stack trace, Go version, memory
 stats, etc.
 
-In order to start the diagnostics agent, see the [hello example](https://github.com/google/gops/blob/master/examples/hello/main.go).
+In order to start the diagnostics agent, see the [hello example](https://github.com/wgliang/gops/blob/master/examples/hello/main.go).
 
 ``` go
 package main
@@ -31,7 +31,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/google/gops/agent"
+	"github.com/wgliang/gops/agent"
 )
 
 func main() {
@@ -80,12 +80,12 @@ runtime/pprof.writeGoroutine(0x13c7bc0, 0xc42000e008, 0x2, 0xc428f1c048, 0xc420e
 	/Users/jbd/go/src/runtime/pprof/pprof.go:592 +0x44
 runtime/pprof.(*Profile).WriteTo(0x13eeda0, 0x13c7bc0, 0xc42000e008, 0x2, 0xc42000e008, 0x0)
 	/Users/jbd/go/src/runtime/pprof/pprof.go:302 +0x3b5
-github.com/google/gops/agent.handle(0x13cd560, 0xc42000e008, 0xc420186000, 0x1, 0x1, 0x0, 0x0)
-	/Users/jbd/src/github.com/google/gops/agent/agent.go:150 +0x1b3
-github.com/google/gops/agent.listen()
-	/Users/jbd/src/github.com/google/gops/agent/agent.go:113 +0x2b2
-created by github.com/google/gops/agent.Listen
-	/Users/jbd/src/github.com/google/gops/agent/agent.go:94 +0x480
+github.com/wgliang/gops/agent.handle(0x13cd560, 0xc42000e008, 0xc420186000, 0x1, 0x1, 0x0, 0x0)
+	/Users/jbd/src/github.com/wgliang/gops/agent/agent.go:150 +0x1b3
+github.com/wgliang/gops/agent.listen()
+	/Users/jbd/src/github.com/wgliang/gops/agent/agent.go:113 +0x2b2
+created by github.com/wgliang/gops/agent.Listen
+	/Users/jbd/src/github.com/wgliang/gops/agent/agent.go:94 +0x480
 # ...
 ```
 

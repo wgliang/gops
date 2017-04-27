@@ -36,7 +36,7 @@ import (
 	"math"
 	"sort"
 
-	"github.com/google/gops/internal/obj"
+	"github.com/wgliang/gops/internal/obj"
 )
 
 const (

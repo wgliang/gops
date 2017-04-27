@@ -33,8 +33,8 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/google/gops/internal/obj"
-	"github.com/google/gops/internal/sys"
+	"github.com/wgliang/gops/internal/obj"
+	"github.com/wgliang/gops/internal/sys"
 )
 
 func progedit(ctxt *obj.Link, p *obj.Prog) {

@@ -3,7 +3,7 @@
 
 package arm64
 
-import "github.com/google/gops/internal/obj"
+import "github.com/wgliang/gops/internal/obj"
 
 var Anames = []string{
 	obj.A_ARCHSPECIFIC: "ADC",

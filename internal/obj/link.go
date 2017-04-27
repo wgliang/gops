@@ -34,7 +34,7 @@ import (
 	"bufio"
 	"fmt"
 
-	"github.com/google/gops/internal/sys"
+	"github.com/wgliang/gops/internal/sys"
 )
 
 // An Addr is an argument to an instruction.

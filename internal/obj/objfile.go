@@ -116,8 +116,8 @@ import (
 	"path/filepath"
 	"sort"
 
-	"github.com/google/gops/internal/dwarf"
-	"github.com/google/gops/internal/sys"
+	"github.com/wgliang/gops/internal/dwarf"
+	"github.com/wgliang/gops/internal/sys"
 )
 
 // The Go and C compilers, and the assembler, call writeobj to write

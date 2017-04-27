@@ -8,7 +8,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/google/gops/agent"
+	"github.com/wgliang/gops/agent"
 )
 
 func main() {

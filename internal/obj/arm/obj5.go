@@ -35,8 +35,8 @@ import (
 	"log"
 	"math"
 
-	"github.com/google/gops/internal/obj"
-	"github.com/google/gops/internal/sys"
+	"github.com/wgliang/gops/internal/obj"
+	"github.com/wgliang/gops/internal/sys"
 )
 
 var progedit_tlsfallback *obj.LSym
